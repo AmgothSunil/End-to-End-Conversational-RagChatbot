@@ -80,18 +80,21 @@ app = FastAPI(
 # CORS Configuration (for Streamlit frontend or other clients)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Restrict this in production  
+    allow_origins=[
+        "https://conversational-rag-chatbot-klz6.onrender.com",
+        "http://localhost:8501",  # Streamlit local frontend
+        "http://127.0.0.1:8501",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 
-# Welcome message
+# Welcome Message
 @app.get("/")
 async def welcome():
     return {"message": "Welcome to Conversational RAG Chatbot API"}
-
 
 # Health Check Endpoint
 @app.get("/health", status_code=HTTP_200_OK)
