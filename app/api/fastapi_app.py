@@ -87,6 +87,12 @@ app.add_middleware(
 )
 
 
+# Welcome message
+@app.get("/")
+async def welcome():
+    return {"message": "Welcome to Conversational RAG Chatbot API"}
+
+
 # Health Check Endpoint
 @app.get("/health", status_code=HTTP_200_OK)
 async def health_check():

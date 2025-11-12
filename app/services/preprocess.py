@@ -17,6 +17,8 @@ from app.utils.params import load_params
 # Load environment variables
 load_dotenv()
 
+os.environ["HUGGINGFACE_API_TOKEN"] = os.getenv("HUGGINGFACE_API_TOKEN")
+
 # Load config parameters
 params = load_params("config/params.yaml")
 preprocess_params = params.get("preprocess_params", {})
@@ -128,7 +130,8 @@ class DocumentPreprocessor:
             logger.info(f"Document split into {len(chunks)} chunks.")
 
             logger.info("Initializing MiniLM embedding model...")
-            embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+            embedding_model = HuggingFaceEmbeddings(embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+)
 
             logger.info(f"Storing document vectors into Pinecone under session_id: {session_id}")
 
