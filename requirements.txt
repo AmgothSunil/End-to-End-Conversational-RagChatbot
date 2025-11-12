@@ -16,3 +16,4 @@ motor
 fastapi
 python-multipart
 uvicorn
+sentence-transformers

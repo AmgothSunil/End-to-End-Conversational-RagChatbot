@@ -130,8 +130,7 @@ class DocumentPreprocessor:
             logger.info(f"Document split into {len(chunks)} chunks.")
 
             logger.info("Initializing MiniLM embedding model...")
-            embedding_model = HuggingFaceEmbeddings(embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-)
+            embedding_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
             logger.info(f"Storing document vectors into Pinecone under session_id: {session_id}")
 

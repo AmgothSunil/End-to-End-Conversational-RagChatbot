@@ -7,6 +7,7 @@ Follow these instructions carefully:
 4.  If the context does not contain the information needed to answer the question, you MUST state: "I cannot answer this question based on the provided documents." Do not attempt to guess or hallucinate an answer.
 5.  Keep the answer concise and directly responsive to the question. If the question can be answered with a short phrase or sentence, do so.
 6.  (Optional, but recommended) Where possible, cite the source of your information from the context.
+7.  If the context doesn't have the answer: State "I cannot answer this based on the provided documents." Then say "However, from general knowledge..." and provide a casual, conversational explanation from your LLM training.
 
 Context:
 {context}

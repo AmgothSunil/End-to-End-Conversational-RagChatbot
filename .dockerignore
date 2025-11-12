@@ -10,3 +10,9 @@ logs/
 .DS_Store
 .vscode/
 .idea/
+LICENSE
+pyproject.toml
+README.md
+uv.lock
+.gitignore
+.python-version

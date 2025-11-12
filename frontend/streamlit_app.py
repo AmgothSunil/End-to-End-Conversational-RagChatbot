@@ -100,7 +100,7 @@ def display_chat_history():
 with st.sidebar:
     st.header("📂 Add to Knowledge Base")
     
-    # Cleaned up the file uploader
+    # File uploader
     uploaded_files = st.file_uploader(
         "Upload PDF or TXT files",
         type=["pdf", "txt"],
@@ -115,9 +115,8 @@ with st.sidebar:
         placeholder="https://example.com/page1\nhttps://blog.example.com/post2"
     )
 
-    # Check if there is anything to process (either files or text in the URL box)
+    # Check if there is anything to process 
     if uploaded_files or pasted_urls.strip():
-        # Now the button will appear if either input has content
         if st.button("Process Sources"):
             upload_documents(uploaded_files, pasted_urls, st.session_state.session_id)
 
@@ -131,7 +130,7 @@ with st.sidebar:
     st.markdown("---")
     st.caption("Backend: FastAPI | Vector Store: Pinecone | DB: MongoDB")
 
-# Chat Interface (No changes needed here)
+# Chat Interface
 st.subheader("💭 Chat with Your Documents")
 st.write("Ask questions based on your uploaded files using Retrieval-Augmented Generation (RAG).")
 
