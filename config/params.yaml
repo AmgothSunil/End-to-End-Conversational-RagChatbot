@@ -1,0 +1,18 @@
+session_prompt_params:
+  log_file_path: "session_prompt.log"
+
+preprocess_params:
+  log_file_path: "docs_preprocess.log"
+
+rag_chain_params:
+  log_file_path: "rag_chain.log"
+
+mangodb_params:
+  log_file_path: "mangodb.log"
+
+rag_chatbot_params:
+  log_file_path: "rag_chatbot.log"
+  chat_history_limit: 5 
+
+server_params:
+  log_file_path: "server.log"
