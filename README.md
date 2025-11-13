@@ -286,10 +286,9 @@ Add these secrets to your GitHub repository (Settings → Secrets and variables)
 AWS_ACCESS_KEY_ID
 AWS_SECRET_ACCESS_KEY
 AWS_REGION                    # e.g., us-east-1
-ECR_REPOSITORY_NAME           # e.g., rag-chatbot
-ECS_CLUSTER_NAME              # e.g., production-cluster
-ECS_SERVICE_NAME              # e.g., rag-chatbot-service
-ECS_TASK_DEFINITION           # e.g., rag-chatbot-task
+ECR_REPOSITORY           # e.g., rag-chatbot
+ECS_CLUSTER              # e.g., production-cluster
+ECS_SERVICE              # e.g., rag-chatbot-service
 CONTAINER_NAME                # e.g., rag-chatbot-backend
 ```
 
