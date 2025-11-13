@@ -3,6 +3,8 @@ session_prompt_params:
 
 preprocess_params:
   log_file_path: "docs_preprocess.log"
+  chunk_size: 1000
+  chunk_overlap: 150
 
 rag_chain_params:
   log_file_path: "rag_chain.log"

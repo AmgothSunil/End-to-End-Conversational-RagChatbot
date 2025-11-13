@@ -22,7 +22,10 @@ os.environ["HUGGINGFACE_API_TOKEN"] = os.getenv("HUGGINGFACE_API_TOKEN")
 # Load config parameters
 params = load_params("config/params.yaml")
 preprocess_params = params.get("preprocess_params", {})
+
 log_file_path = preprocess_params.get("log_file_path", "docs_preprocess.log")
+chunk_size = preprocess_params.get("chunk_size", 1000)
+chunk_overlap = preprocess_params.get("chunk_overlap", 150)
 
 logger = setup_logger("DocumentPreprocessor", log_file_path)
 
@@ -125,7 +128,7 @@ class DocumentPreprocessor:
                 return None
 
             logger.info(f"Splitting documents into semantic chunks for the session_id: {session_id}")
-            splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=150)
+            splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
             chunks = splitter.split_documents(loaded_docs)
             logger.info(f"Document split into {len(chunks)} chunks.")
 
